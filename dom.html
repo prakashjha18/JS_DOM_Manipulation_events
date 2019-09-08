@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <title>Javascript DOM</title>
+    <script type="text/javascript">
+        function getcube() {
+            var number = document.getElementById("number").value;
+            alert(number * number * number);
+        }
+
+        function getsquare() {
+            var number = document.getElementById("xyz").value;
+            alert(number * number);
+        }
+    </script>
+
+    <script type="text/javascript">
+        function CheckGenderClick() {
+            var checkgender = document.getElementsByName('Gender');
+            var ischecked = false;
+            for (var i = 0; i < checkgender.length; i++) {
+                if (checkgender[i].checked) {
+                    ischecked = true;
+                    var checkedValue = checkgender[i].value;
+                    alert("You Have Selected " + checkedValue);
+                    break;
+                }
+            }
+            if (!ischecked) {
+                //if not checked
+                alert("Please choose any one option");
+            }
+        }
+
+
+        function CheckMinorClick() {
+            var checkminor = document.getElementsByName('Age');
+            var ischecked = false;
+            for (var i = 0; i < checkminor.length; i++) {
+                if (checkminor[i].checked) {
+                    ischecked = true;
+                    var checkedValue = checkminor[i].value;
+                    alert("You Have Selected " + checkedValue);
+                    break;
+                }
+            }
+            if (!ischecked) {
+                //if not checked
+                alert("Please choose any one option");
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function countpara() {
+            var totalpara = document.getElementsByTagName("p");
+            alert("total p tags are: " + totalpara.length);
+
+        }
+
+        function countspan() {
+            var totalspan = document.getElementsByTagName("span");
+            alert("total span are: " + totalspan.length);
+
+        }
+
+        function countdiv() {
+            var totaldiv = document.getElementsByTagName("div");
+            alert("total div are: " + totaldiv.length);
+
+        }
+    </script>
+
+    <script type="text/javascript">
+        function showcommentform() {
+            var data =
+                "Name:<br><input type='text' name='name'><br>Comment:<br><textarea rows='5' cols='50'></textarea><br><input type='submit' value='comment'>";
+
+            document.getElementById('mylocation').innerHTML = data;
+        }
+    </script>
+
+    <script>
+        function getInnerText() {
+            alert(document.getElementById("demo1").innerText)
+        }
+
+        function setInnerText() {
+            var data =
+                "The textContent property is not supported in Internet Explorer 8 and earlier, and the innerText property is not supported in IE9 and earlier";
+            document.getElementById("demo2").innerHTML = data;
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <h1>Document getElementsById() Method</h1>
+        Enter No:<input type="text" id="number" name="number" /><br />
+        <input type="button" value="cube" onclick="getcube()" />
+        </br>
+        Enter No:<input type="text" id="xyz" name="xyz" /><br />
+        <input type="button" value="square" onclick="getsquare()" />
+    </form>
+
+    <form>
+        <h1>Document getElementsByName() Method</h1>
+        Male:<input type="radio" name="Gender" value="male">
+        </br>
+        Female:<input type="radio" name="Gender" value="female">
+        </br>
+        >18:<input type="checkbox" name="Age" value="NonMinor">
+        </br>
+        <18:<input type="checkbox" name="Age" value=" Minor">
+            </br>
+            <input type="button" onclick="CheckGenderClick()" value="Gender Check Click">
+            </br>
+            <input type="button" onclick="CheckMinorClick()" value="Minor Check Click">
+    </form>
+
+    <form>
+        <h1>Document getElementsByTagName() Method</h1>
+        <p>This is a pragraph</p>
+        <p>Here we are going to count total number of paragraphs by getElementByTagName() method.</p>
+        <p>Let's see the simple example</p>
+        <p>Let's see the simple example</p>
+        <span>Let's see the simple example</span><br>
+        <span>Let's see the simple example</span><br>
+        <div>Let's see the div 1 example</div><br>
+        <div>Let's see the div 2 example</div> <br>
+        <button onclick="countpara()">count paragraph</button>
+        <button onclick="countspan()">count span</button>
+        <button onclick="countdiv()">count div</button>
+    </form>
+
+    <form name="myForm">
+        <h1>Document innerHTML Propertys</h1>
+        <div id="demo" onmouseover="showcommentform()">Hover here to see comment form</div>
+        <div id="mylocation"></div>
+    </form>
+
+    <form>
+        <h1>Document innerText Property</h1>
+        <p id="demo1">The innerText property sets or returns the text content of the specified node</p>
+        <p id="demo2">Sample Text </p>
+        <button onclick="getInnerText()">Get innerText</button>
+        <button onclick="setInnerText()">Set innerText</button>
+    </form>
+
+</body>
+
+</html>
